@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Employee = require('./lib/Employee');
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
-const createHTML = require('./src/page-template.js');
+const Employee = require('./lib/employee');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
+const createHTML = require('./src/crewHTML.js');
 
 const crew =[];
 
@@ -162,11 +162,11 @@ function createEmployee() {
     )
 };
 
-function writeToFile(data) {
-    fs.writeFile('./dist/crew.html', data, (err) =>
-    err ? console.log(err) : console.log("Your crew has been assembled! We ride at dawn."))
-}
-
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, createHTML(data), (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
+  }
 function init() {
     inquirer.prompt(manager)
     .then((data) => {

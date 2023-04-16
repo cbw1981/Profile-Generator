@@ -1,5 +1,5 @@
-const Manager = require("../lib/Manager");
-const Employee = require("../lib/Employee");
+const Manager = require("../lib/manager");
+const Employee = require("../lib/employee");
 
 const manager = new Manager("Bruce Wayne","002","darkknight@example.com","555 555 5555");
 
