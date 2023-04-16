@@ -1,5 +1,4 @@
-function crewHTML(data) {
-    return `<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <head>
     <meta charset="UTF-8">
@@ -17,78 +16,62 @@ function crewHTML(data) {
     </section>
     <section class="container">
         <div class="funk">
-            ${assembleCrew(data)}
+            
+                <div class="employee-info">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <div class="header-sub">
+                                    <p>joe</p>
+                                    <p>Manager</p>
+                                    <div class="footer">
+                                        <p class="little-foot">8</p>
+                                        <p class="little-foot"><a href="mailto:joe@joe.com">joe@joe.com</a></p>
+                                        <p class="little-foot">Office #: 99999999</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="employee-info">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <div class="header-sub">
+                                    <p>steve</p>
+                                    <p>Engineer</p>
+                                    <div class="footer">
+                                        <p class="little-foot">6</p>
+                                        <p class="little-foot"><a href="mailto:steve@steve.com">steve@steve.com</a></p>
+                                        <p class="little-foot">GitHub:	%20<a href="https://www.github.com/github/steve">github/steve</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="employee-info">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-header">
+                                <div class="header-sub">
+                                    <p>ronin</p>
+                                    <p>Intern</p>
+                                    <div class="footer">
+                                        <p class="little-foot">8</p>
+                                        <p class="little-foot"><a href="mailto:ronin@ronin.com">ronin@ronin.com</a></p>
+                                        <p class="little-foot">nyu</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
     </section>
     </body>
-    </html>`;
-};
-
-function assembleCrew(array) {
-    let crew = array.map(function(employee) {
-        if (employee.getRole() === 'Manager') {
-            return `
-                <div class="employee-info">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="header-sub">
-                                    <p>${employee.getName()}</p>
-                                    <p>Manager</p>
-                                    <div class="footer">
-                                        <p class="little-foot">${employee.getId()}</p>
-                                        <p class="little-foot"><a href="mailto:${employee.getEmail()}">${employee.getEmail()}</a></p>
-                                        <p class="little-foot">Office #: ${employee.getOfficeNumber()}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `
-        } else if (employee.getRole() === 'Engineer') {
-            return `
-                <div class="employee-info">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="header-sub">
-                                    <p>${employee.getName()}</p>
-                                    <p>Engineer</p>
-                                    <div class="footer">
-                                        <p class="little-foot">${employee.getId()}</p>
-                                        <p class="little-foot"><a href="mailto:${employee.getEmail()}">${employee.getEmail()}</a></p>
-                                        <p class="little-foot">GitHub:	%20<a href="https://www.github.com/${employee.getGithub()}">${employee.getGithub()}</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `
-        } else {
-            return `
-                <div class="employee-info">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="card-header">
-                                <div class="header-sub">
-                                    <p>${employee.getName()}</p>
-                                    <p>Intern</p>
-                                    <div class="footer">
-                                        <p class="little-foot">${employee.getId()}</p>
-                                        <p class="little-foot"><a href="mailto:${employee.getEmail()}">${employee.getEmail()}</a></p>
-                                        <p class="little-foot">${employee.getSchool()}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `
-        }
-    }).join(''); // Use .join('') to convert the array of strings to a single string
-    return crew;
-}
-
-module.exports = crewHTML;
+    </html>

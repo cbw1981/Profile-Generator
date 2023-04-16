@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Employee = require('./lib/employee');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
@@ -162,8 +161,8 @@ function createEmployee() {
     )
 };
 
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, createHTML(data), (err) =>
+function writeToFile( html) {
+    fs.writeFile("crewHTML", html, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
   }
